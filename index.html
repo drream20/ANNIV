@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div id="hearts-container"></div>
+        <img src="logo.jpg" alt="Couple Logo" class="logo">
+    </div>
+    <!-- Main Content -->
+    <div id="main-content" style="display:none;">
+        <!-- Navbar -->
+        <nav>
+            <ul>
+                <li><a href="./2020/2020.html">2020 - 2021</a></li>
+                <li><a href="./2022/2022.html">2022 - 2023</a></li>
+                <li><a href="2024.html">2024 - 2025</a></li>
+            </ul>
+        </nav>
+
+        <!-- Background Video -->
+        <video autoplay muted loop id="bg-video">
+            <source src="background.mp4" type="video/mp4">
+
+        </video>
+        <audio id="bg-audio" loop>
+            <source src="moira.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Overlay -->
+        <div class="overlay">
+            <h1>Happy Anniversary <br> Joh💖</h1>
+            <button id="show-message">My Message 🫶</button>
+            <p id="message" style="display:none;">
+                Joh💖,
+
+                Naaalala mo pa noong 2020?, sa hindi inaasahang pagkakataon, nagtagpo ang mga landas natin sa isang
+                simpleng gabi
+                sa OmeTV. <br> <br>
+
+                Hindi ko akalain Joh💖 na mula sa isang random na pag-uusap, may mabubuo palang koneksyon na ganito
+                kalalim. Mula sa simpleng "Hi!, INC ka pala?" at "Opo," unti-unti kitang nakilala.
+                <br> <br>
+                Ang kwento mo, tawa, at mga
+                pangarap. Lumipas ang mga araw, linggo, at buwan, mas lalo kitang nakilala at minahal. At kahit na
+                malayo tayo sa
+                isa’t isa, kahit na LDR ang setup natin, hindi ko akalain na napatunayan nating hindi hadlang ang
+                distansya para sa
+                dalawang pusong tunay na nagmamahalan. <br><br>
+
+                Sa bawat tawanan natin sa video call, sa bawat "good
+                morning" at "good night," minsan tampuhan, at sa bawat pag-aalala mo sa akin, ramdam ko parin ang init
+                at tibok ng puso mo.
+                <br> <br>
+                Hanggang ngayon, patuloy tayong magkasama (virtually), hindi lang sa masasayang sandali kundi pati sa
+                mga pagsubok na
+                dumaan. Sa bawat problema, mas pinili nating maghawak-kamay at magtiwala sa isa’t isa. At alam ko,
+                hangga’t magkasama tayo, kakayanin natin ang lahat Joh💖.
+                <br> <br>
+                Joh💖, umaasa parin ako at ipinagpapanata ko lagi na magpapatuloy pa'to hanggang sa mga susunod pang
+                taon—hanggang
+                sa "matupad ang pangako natin" na pinapangarap natin. <br> <br>
+
+                Hanggang sa araw na wala nang distansya sa pagitan natin,
+                at magigising ako araw-araw na ikaw ang unang makikita ko.
+                <br> <br>
+
+                Alam mo yung kasabihang "Malayo pa pero malayo na"? mas lalo akong nasasabik, kase noon sinasabi lang
+                natin
+                yung mga pangarap natinsa isa’t isa at alam ko malapit kona matupad yun!
+
+                <br> <br>
+                Promise ko, patuloy kitang mamahalin, iintindihin at pipiliin, araw-araw, taon-taon, hanggang sa huling
+                hininga ko. Hanggang kamatayan, ikaw at ako.
+                <br> <br>
+                Happy Anniversary Joh💖. Salamat sa lahat ng taon, sa lahat ng pagmamahal, at sa pagiging tahanan ko
+                kahit na malayo ka. Ikaw ang pinakamagandang "biglaan" na nangyari sa buhay ko.
+                <br> <br>
+                — Edmar❤️
+            </p>
+            <button id="back-button" style="display:none;">⬅ Back</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+    <!-- Background music for 2020.html  -->
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const link2020 = document.querySelector('a[href="./2020/2020.html"]');
+    if (link2020) {
+        link2020.addEventListener("click", () => {
+            localStorage.setItem("playMusic", "true");
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Splash Screen */
+#splash {
+    background: #ff69b4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#splash img {
+    width: 150px;
+}
+
+/* Navbar */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* background: rgba(255, 182, 193, 0.3); */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(0px);
+    text-align: center;
+    padding: 25px 0;
+    z-index: 2;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Underline Animation */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: rgb(255, 254, 254);
+    transition: width 0.3s ease;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #ffe6f0;
+    text-shadow: 0 0 10px white, 0 0 20px pink;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hand Heart Emoji on Hover */
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    content: "";
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background-color: black;
+}
+
+.overlay h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8),
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(255, 20, 147, 0.5);
+    animation: glow 3s ease-in-out infinite, floatText 4s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.8),
+            0 0 20px rgba(255, 105, 180, 0.6),
+            0 0 30px rgba(255, 20, 147, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 182, 193, 1),
+            0 0 40px rgba(255, 105, 180, 0.8),
+            0 0 60px rgba(255, 20, 147, 0.6);
+    }
+}
+
+@keyframes floatText {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+    .overlay h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Overlay Content */
+.overlay {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    top: 90px;
+    bottom: 100px;
+    text-align: center;
+    color: white;
+}
+
+/* Anniversary Button */
+.overlay button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgba(255, 182, 193, 0.8);
+    border: 2px solid white;
+    border-radius: 50px;
+    /* Fully rounded */
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+}
+
+/* Hover Glow Effect */
+.overlay button:hover {
+    background: rgba(255, 182, 193, 1);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px pink, 0 0 30px hotpink;
+}
+
+/* Animated Border Glow */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 10px pink, 0 0 20px hotpink;
+    }
+
+    50% {
+        box-shadow: 0 0 20px hotpink, 0 0 40px pink;
+    }
+
+    100% {
+        box-shadow: 0 0 10px pink, 0 0 20px hotpink;
+    }
+}
+
+.overlay button {
+    animation: borderGlow 2s infinite;
+}
+
+#message {
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(62, 50, 52, 0.7);
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    margin-top: 0%;
+}
+
+/* Splash Screen */
+#splash {
+    background: #ff69b4;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hearts Container */
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Click-through */
+    z-index: 0;
+}
+
+/* Circular Logo */
+#splash .logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: logoPop 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo Animation */
+@keyframes logoPop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Hearts Animation */
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: fall linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+#back-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 192, 203, 0.9);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: rgba(255, 105, 180, 0.9);
+    transform: scale(1.05);
+}
+
+/* Responsive: Center button on mobile */
+@media (max-width: 600px) {
+    #back-button {
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+}
