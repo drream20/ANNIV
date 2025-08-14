@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Photo Album</title>
+    <link rel="stylesheet" href="2020.css">
+</head>
+
+<body>
+
+    <body>
+        <audio id="bg-music" src="ocean.mp3" loop></audio>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const bgMusic = document.getElementById("bg-music");
+                const shouldPlay = localStorage.getItem("playMusic");
+
+                if (shouldPlay === "true") {
+                    bgMusic.play().catch(err => console.log("Autoplay blocked:", err));
+                    localStorage.removeItem("playMusic"); // only play once per click
+                }
+            });
+        </script>
+
+
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../2022/2022.html">2022 - 2023</a></li>
+                <li><a href="2024.html">2024 - 2025</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay">
+            <h1>Our Memories ❤️</h1>
+            <div class="gallery">
+                <img src="../2020/2020_images/1.jpeg" data-msg="The day we first met ❤️">
+                <img src="../2020/2020_images/2.jpg" data-msg="Our first long talk 💬">
+                <img src="../2020/2020_images/3.jpeg" data-msg="When you made me smile 😄">
+                <img src="../2020/2020_images/4.jpeg" data-msg="Our first laugh together 😂">
+                <img src="../2020/2020_images/5.jpeg" data-msg="That random but sweet moment 💕">
+                <img src="../2020/2020_images/6.jpeg" data-msg="When you made me blush 😊">
+                <img src="../2020/2020_images/7.jpeg" data-msg="Our unforgettable date 💖">
+                <img src="../2020/2020_images/8.jpeg" data-msg="When you comforted me 🤗">
+                <img src="../2020/2020_images/9.jpeg" data-msg="The time we stayed up late talking 🌙">
+                <img src="../2020/2020_images/10.jpeg" data-msg="When you held my hand 🫶">
+
+                <img src="../2020/2020_images/11.jpg" data-msg="That silly but cute moment 🤭">
+                <img src="../2020/2020_images/12.jpg" data-msg="When you made me feel special 💎">
+                <img src="../2020/2020_images/13.jpg" data-msg="Our sweetest memory so far 🍯">
+                <img src="../2020/2020_images/14.jpg" data-msg="When we shared secrets 🤫">
+                <img src="../2020/2020_images/15.jpg" data-msg="When I realized I love you 💘">
+                <img src="../2020/2020_images/16.jpg" data-msg="Our inside jokes 🤣">
+                <img src="../2020/2020_images/17.jpg" data-msg="When you made me proud 🌟">
+                <img src="../2020/2020_images/18.jpg" data-msg="Our silly adventures 🗺️">
+                <img src="../2020/2020_images/19.jpg" data-msg="When you said you missed me 🥹">
+                <img src="../2020/2020_images/20.jpg" data-msg="The moment I knew you're the one 💍">
+
+                <img src="../2020/2020_images/21.jpg" data-msg="When we dreamed together 🌌">
+                <img src="../2020/2020_images/22.jpg" data-msg="Our first good morning message 🌞">
+                <img src="../2020/2020_images/23.jpg" data-msg="That time we couldn’t stop talking 🗣️">
+                <img src="../2020/2020_images/24.jpeg" data-msg="When you surprised me 🎁">
+                <img src="../2020/2020_images/25.jpeg" data-msg="Our quiet but warm moments 🌸">
+                <img src="../2020/2020_images/26.jpeg" data-msg="When you made me laugh out loud 🤣">
+                <img src="../2020/2020_images/27.jpeg" data-msg="That night I couldn’t stop thinking about you 🌙">
+                <img src="../2020/2020_images/28.jpeg" data-msg="When you called me by my nickname 🥰">
+                <img src="../2020/2020_images/29.jpg" data-msg="The moment you said 'I love you' ❤️">
+                <img src="../2020/2020_images/30.jpeg" data-msg="Our forever promise 🤞">
+
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close" id="close">&times;</span>
+            <img id="lightbox-img" src="">
+            <p id="lightbox-msg"></p>
+        </div>
+        <script src="2020.js"></script>
+    </body>
+
+</html>
