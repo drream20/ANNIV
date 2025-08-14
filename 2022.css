@@ -1,0 +1,201 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #d73d8a;
+    color: white;
+}
+
+
+/* Navbar */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 182, 193, 0.3);
+    /* Transparent pink */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(0px);
+    /* Safari support */
+    text-align: center;
+    padding: 10px 0;
+    z-index: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Soft border */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Underline Animation */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #ffe6f0;
+    text-shadow: 0 0 10px white, 0 0 20px pink;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hand Heart Emoji on Hover */
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    content: "";
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.overlay {
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay h1 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #888783, #1C6EA4, #FFF9AF, #33A1E0);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeZoom 1.5s ease-out forwards, gradientMove 6s ease infinite;
+    letter-spacing: 1.5px;
+}
+
+ @keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+} 
+
+/* Gradient flowing animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Image grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 70%;
+    border-radius: 10px;
+}
+
+.lightbox p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.close {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+}
